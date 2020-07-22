@@ -9,7 +9,7 @@
     <th>Umur</th>
     <th>JK</th>
     <th>Gejala</th>
-    <th>Penyakit</th>
+    <th>Tingkat Gizi</th>
     <th>Aksi</th>
   </tr>
   <?php 
