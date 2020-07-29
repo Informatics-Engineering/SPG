@@ -69,7 +69,7 @@ border-color:lightblue;
 border-width:2px;
 }
 </style>
-
+<center>
 <h3>GOAL	:  TINGKAT GIZI</h3>
 <table   class="judul">
     <th colspan="4" align="left"><strong>GEJALA</strong></th>
@@ -83,13 +83,13 @@ border-width:2px;
 	</td>
 </tr>
   <?php 
-	 $hasil=mysql_query("Select * From tblgejala"); 
+$hasil = mysql_query("SELECT * FROM tblgejala");
 	 $warna1="#ccc"; //baris genap berwarna putih
 	 $warna2="#fff"; //baris genap berwarna cyan muda
 	 $warna=$warna1; //warna default
-	$jum=mysqli_num_rows($hasil);
+	$jum=mysql_num_rows($hasil);
 	 $no=1;
-	 while ($data=mysqli_fetch_array($hasil))
+	 while ($data=mysql_fetch_array($hasil))
 	 {
 	 $id_kategori=$data['idgejala'];
 		 if ($warna==$warna1) {
@@ -107,8 +107,9 @@ border-width:2px;
 	</td> </tr>";
 	 $no++;
 	 } 
-			?>
-		<tr > <td colspan="3"> <input name="Submit" type="submit" value="Diagnosa" /></td></tr>
-</table></form> 
+			?>			
+		<tr > <td colspan="3"> <br /><br /><center><input name="Submit" type="submit" value="Diagnosa" /></td></tr>
+		</center>
+</table></form> </center>
 </div>
 

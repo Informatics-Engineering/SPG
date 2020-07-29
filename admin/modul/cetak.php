@@ -24,6 +24,8 @@
   $pas1=mysql_query("SELECT * FROM tblgangguan where idgangguan='$r[id_gangguan]'");
   $rp1=mysql_fetch_array($pas1);
   
+ $pas2=mysql_query("SELECT * FROM tblgejala where idgejala='$r[idtingkatgizi]'");
+  $rp2=mysql_fetch_array($pas2);
   
   ?>
   <tr valign="top">
@@ -32,19 +34,7 @@
     <td><?php echo"$rp[nama_lengkap]";?></td>
     <td><?php echo"$rp[umur]";?></td>
     <td><?php echo"$rp[jk]";?></td>
-    <td>
-	<?php 
-		$querygx = "SELECT * FROM detailkonsul where idkonsul='$r[id]' "; 
-			$resultgx = mysql_query($querygx) or die('Error');
-			while($datagx = mysql_fetch_array($resultgx))
-			{
-
-		$queryg = "SELECT * FROM tblgejala where idgejala='$datagx[idgejala]' "; 
-			$resultg = mysql_query($queryg) or die('Error');
-			while($datag = mysql_fetch_array($resultg))
-			{
-			echo"$datag[namagejala],";
-			} }  ?>	</td>
+    <td><?php echo"$rp2[namagejala]";?></td>
     <td align="center"><?php echo"$rp1[namagangguan] <br> ($r[persen] %)";?></td>
   <?php }?>
 </table>

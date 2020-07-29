@@ -1,35 +1,40 @@
-<body onload=javascript:window:print()>
-<?php include "../library/koneksi.php";?>
- <h2 align="center">Laporan Data Pasien</h2><hr>
-<table width="100%" border="1" bordercolor="#000000">
+<html>
+<title>Laporan Data Pasien</title>
+<body>
+  <?php 
+  include '../library/koneksi.php';
+  ?>
+
+ <h2 align="center">Laporan Data Pasien</h2><hr> 
+  <table width="100%" border="1" bordercolor="#000000">
       <tr bgcolor="#999999">
         <td valign="top"><strong>No.</strong></td>
         <td valign="top"><strong>Nama Lengkap</strong></td>
         <td><strong>Id pasien</strong></td>
         <td><strong>Umur</strong></td>
         <td><strong>Jenis Kelamin</strong></td>
-        <td><div align="center"><strong>Aksi</strong></div></td>
-      </tr>
-	  	<? 
-//panggil data dari tabel
-$query = "SELECT * FROM user where level<>'admin'"; 
-$result = mysql_query($query) or die('Error');
-while($data = mysql_fetch_array($result))
-{
-//panggil data dari tabel, jadikan variabel
-$no=$no+1;
-?>
-      <tr>
-        <td valign="top"><? echo "$no"; ?></td>
-        <td valign="top"><? echo "$data[nama_lengkap] " ; ?></td>
-        <td><? echo "$data[id_user]" ;?></td>
-        <td valign="top"><? echo "$data[umur] " ; ?></td>
-        <td valign="top"><? echo "$data[jk]" ; ?></td>
-        <td valign="top"><div align="center"><a href="userdelete.php?username=<? echo $data['id_user']; ?>">[HAPUS]</a></div></td>
-      </tr>
-          <?
- }
-?>
-      
-    </table>
-     
+    </tr>
+    <?php 
+        $no = 1;
+    $query=mysql_query("SELECT * FROM user Where level='user'");
+      while($row=mysql_fetch_array($query))
+      {
+        echo "
+        <tr>
+          <td>".$no++."</td>
+          <td>".$row['nama_lengkap']."</td>
+          <td>".$row['id_user']."</td>
+          <td>".$row['umur']."</td>
+          <td>".$row['jk']."</td>
+        </tr>
+        ";
+      }
+    ?>
+  </table>
+ 
+  <script>
+    window.print();
+  </script>
+ 
+</body>
+</html>

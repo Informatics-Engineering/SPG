@@ -63,6 +63,7 @@ border-width:2px;
 }
 </style>
 
+<center>
 <table   class="judul">
     <th colspan="4" align="left"><strong>GEJALA</strong></th>
 </table>
@@ -107,13 +108,14 @@ $jum=$_POST['jum'];
 	$persentot=$persen+$persentot;
 	 } 
 
+
 //================================================================================================================== isi count sebelum ini
 
 			$jj = "SELECT COUNT(*) AS jumData1 FROM detailkonsul where idkonsul='$id_user'  "; 
 			$jjr = mysql_query($jj) or die('Error');
 			$dj = mysql_fetch_array($jjr);
 			$dj1 = $dj['jumData1'];		
-echo "Data Pilih : $dj1 <br><br><br>";
+			echo "Data Pilih : $dj1<br>";
 //==================================================================================================================
 
 //==================================================================================================================
@@ -123,6 +125,7 @@ echo "Data Pilih : $dj1 <br><br><br>";
 		// $data3 = mysql_fetch_array($result3);
 		// echo "$data3[nama_tingkatgizi]";
 		// echo "<meta http-equiv=Refresh content=1;url=?menu=oke&id=$_GET[id]&tingkatgizi=T001&persen=$persentot>"; 
+		echo "<p><a href='?mod=hasilkonsul1&id=$_GET[id]'><button>HASIL</button></a></p>";
 
 
 
@@ -133,4 +136,5 @@ echo "Data Pilih : $dj1 <br><br><br>";
 
 
 </table> 
+</center>
 </div>

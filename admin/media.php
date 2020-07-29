@@ -80,7 +80,7 @@ else
 	        </div>
 	    </div>
 	    <div id="footer" align="center">
-	    	<div id="left_footer">Copyright | Sistem Pakar Tingkat Gizi Lansia | 2020 </div>
+	    	<div id="left_footer">Copyright © 2020 Sistem Pakar - All rights reserved</div>
 	    </div>
 	</div>
 	<!-- Scripts -->
